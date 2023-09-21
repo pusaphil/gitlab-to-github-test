@@ -1,0 +1,15 @@
+name: GitHub Actions Sample
+if: always()
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push:
+    branches:
+      - '!master'
+      - '!main'
+jobs:
+  Explore-GitHub-Actions:
+    container: node:dubnium
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install better-npm-audit -g && npm install
+      - run: better-npm-audit audit -p -l critical > /dev/null
