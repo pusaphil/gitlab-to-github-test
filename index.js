@@ -6,3 +6,4 @@ function concat(x, y) {
 }
 
 concat('hello', 'world')
+
